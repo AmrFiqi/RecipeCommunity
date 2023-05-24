@@ -9,12 +9,11 @@ import UIKit
 
 class StartScreenViewController: UIViewController {
     
-    // MARK: - Labels, Buttons and Images
+    // MARK: - UI Components
     
     private let backgroundImage = UIImage(named: "startingScreen")
     
     private let chefIcon = UIImage(named: "chefHat")
-    
     
     
 
@@ -24,4 +23,7 @@ class StartScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
  
+    private func setupUI() {
+       
+    }
 }
