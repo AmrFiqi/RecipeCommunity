@@ -20,10 +20,14 @@ class StartScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupBackground()
     }
  
-    private func setupUI() {
-       
+    private func setupBackground() {
+        let backgroundImageView = UIImageView(image: backgroundImage)
+        backgroundImageView.frame = view.bounds
+        backgroundImageView.contentMode = .scaleAspectFill
+        view.addSubview((backgroundImageView))
+        view.sendSubviewToBack(backgroundImageView)
     }
 }
