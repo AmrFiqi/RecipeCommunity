@@ -9,21 +9,22 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    
+    // MARK: - Class Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       setupScreen()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupScreen() {
+        view.backgroundColor = .white
+        navigationItem.hidesBackButton = true
     }
-    */
+    
+    private func setupUIComponents() {
+        
+    }
 
 }
