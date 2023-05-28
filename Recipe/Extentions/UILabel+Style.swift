@@ -16,13 +16,18 @@ extension UILabel {
 
 // MARK: - Apply Style
 
-private extension UILabel {
+extension UILabel {
     func applyDefaultScreensTitle() {
         textColor = LabelColors.defaultTitleColor
         font = LabelFonts.defaultTitleFont
         textAlignment = .center
         numberOfLines = 0
         backgroundColor = .white
+    }
+    func applytextFieldLabelStyle() {
+        frame = CGRect(x: 0, y: 0, width: 14, height: 14)
+        textColor = .black
+        translatesAutoresizingMaskIntoConstraints = false
     }
 }
 

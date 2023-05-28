@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E50856542A2260D400334847 /* String+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50856532A2260D400334847 /* String+Style.swift */; };
 		E50856562A23851800334847 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50856552A23851800334847 /* SignInViewController.swift */; };
+		E50856582A238D5300334847 /* UITextField+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50856572A238D5300334847 /* UITextField+Style.swift */; };
+		E508565A2A23983D00334847 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50856592A23983D00334847 /* UIColor.swift */; };
 		E59ED5F22A1DF7C200DFAF91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ED5F12A1DF7C200DFAF91 /* AppDelegate.swift */; };
 		E59ED5F42A1DF7C200DFAF91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ED5F32A1DF7C200DFAF91 /* SceneDelegate.swift */; };
 		E59ED5F62A1DF7C200DFAF91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ED5F52A1DF7C200DFAF91 /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		E50856532A2260D400334847 /* String+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Style.swift"; sourceTree = "<group>"; };
 		E50856552A23851800334847 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E50856572A238D5300334847 /* UITextField+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Style.swift"; sourceTree = "<group>"; };
+		E50856592A23983D00334847 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E59ED5EE2A1DF7C200DFAF91 /* Recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59ED5F12A1DF7C200DFAF91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E59ED5F32A1DF7C200DFAF91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				E59ED62E2A1E0AE400DFAF91 /* UIButton+Style.swift */,
 				E59ED6302A1E0AFD00DFAF91 /* UILabel+Style.swift */,
 				E50856532A2260D400334847 /* String+Style.swift */,
+				E50856572A238D5300334847 /* UITextField+Style.swift */,
+				E50856592A23983D00334847 /* UIColor.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -335,8 +341,10 @@
 				E59ED5F22A1DF7C200DFAF91 /* AppDelegate.swift in Sources */,
 				E50856562A23851800334847 /* SignInViewController.swift in Sources */,
 				E59ED5F42A1DF7C200DFAF91 /* SceneDelegate.swift in Sources */,
+				E508565A2A23983D00334847 /* UIColor.swift in Sources */,
 				E50856542A2260D400334847 /* String+Style.swift in Sources */,
 				E59ED62A2A1E022100DFAF91 /* StartScreenViewController.swift in Sources */,
+				E50856582A238D5300334847 /* UITextField+Style.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

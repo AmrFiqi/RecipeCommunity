@@ -8,15 +8,16 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-
+    
     
     // MARK: - Class Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setupScreen()
-       setupTopTextLabel()
+        
+        setupScreen()
+        setupTopTextLabel()
+        setupEmailTextField()
     }
     
     private func setupScreen() {
@@ -49,5 +50,26 @@ class SignInViewController: UIViewController {
             welcomeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
         ])
     }
-
+    
+    private func setupEmailTextField() {
+        let emailField = UITextField()
+        emailField.applyDefaultStyle()
+        emailField.placeholder = "Email"
+        emailField.textColor = .black
+        view.addSubview(emailField)
+        
+        let emailLabel = UILabel()
+        emailLabel.applytextFieldLabelStyle()
+        emailLabel.text = "Email"
+        view.addSubview(emailLabel)
+        
+        NSLayoutConstraint.activate([
+            emailField.topAnchor.constraint(equalTo: view.topAnchor, constant: 252),
+            emailField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            
+            emailLabel.bottomAnchor.constraint(equalTo: emailField.topAnchor, constant: -10),
+            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+        ])
+    }
+    
 }
