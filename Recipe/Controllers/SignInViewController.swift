@@ -19,6 +19,7 @@ class SignInViewController: UIViewController {
         setupTopTextLabel()
         setupEmailTextField()
         setupPasswordTextField()
+        setupSignInButton()
     }
     
     private func setupScreen() {
@@ -65,7 +66,7 @@ class SignInViewController: UIViewController {
         view.addSubview(emailLabel)
         
         NSLayoutConstraint.activate([
-            emailField.topAnchor.constraint(equalTo: view.topAnchor, constant: 252),
+            emailField.topAnchor.constraint(equalTo: view.topAnchor, constant: 270),
             emailField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             
             emailLabel.bottomAnchor.constraint(equalTo: emailField.topAnchor, constant: -10),
@@ -82,15 +83,42 @@ class SignInViewController: UIViewController {
         
         let passwordLabel = UILabel()
         passwordLabel.applytextFieldLabelStyle()
-        passwordLabel.text = "Password"
+        passwordLabel.text = "Enter Password"
         view.addSubview(passwordLabel)
         
         NSLayoutConstraint.activate([
-            passwordField.topAnchor.constraint(equalTo: view.topAnchor, constant: 363),
+            passwordField.topAnchor.constraint(equalTo: view.topAnchor, constant: 381),
             passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             
             passwordLabel.bottomAnchor.constraint(equalTo: passwordField.topAnchor, constant: -10),
             passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
         ])
+    }
+    
+    private func setupSignInButton() {
+        let signInButton = UIButton()
+        signInButton.setTitle("Sign In    ->", for: .normal)
+        signInButton.applyButtonStyle(.primary)
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(signInButton)
+        
+        let forgetLabel = UILabel()
+        forgetLabel.text = "Forgot Passowrd?"
+        forgetLabel.textColor = UIColor(red: 1.00, green: 0.61, blue: 0.00, alpha: 1.00)
+        forgetLabel.translatesAutoresizingMaskIntoConstraints = false
+        forgetLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
+        view.addSubview(forgetLabel)
+
+        
+        NSLayoutConstraint.activate([
+            signInButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
+            signInButton.widthAnchor.constraint(equalToConstant: 315),
+            signInButton.heightAnchor.constraint(equalToConstant: 60),
+            signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            
+            forgetLabel.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -25),
+            forgetLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+        ])
+        
     }
 }
