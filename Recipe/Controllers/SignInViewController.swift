@@ -16,6 +16,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
        setupScreen()
+       setupTopTextLabel()
     }
     
     private func setupScreen() {
@@ -23,8 +24,30 @@ class SignInViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
     
-    private func setupUIComponents() {
+    private func setupTopTextLabel() {
+        let helloLabel = UILabel()
+        helloLabel.text = "Hello,"
+        helloLabel.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
+        helloLabel.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        helloLabel.translatesAutoresizingMaskIntoConstraints = false
+        helloLabel.textColor = .black
+        view.addSubview(helloLabel)
         
+        let welcomeLabel = UILabel()
+        welcomeLabel.text = "Welcome Back!"
+        welcomeLabel.font = UIFont.systemFont(ofSize: 30, weight: .regular)
+        welcomeLabel.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        welcomeLabel.textColor = .black
+        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(welcomeLabel)
+        
+        NSLayoutConstraint.activate([
+            helloLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 94),
+            helloLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            
+            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 139),
+            welcomeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+        ])
     }
 
 }
