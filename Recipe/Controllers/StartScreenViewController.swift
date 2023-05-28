@@ -61,6 +61,7 @@ class StartScreenViewController: UIViewController {
         startCookingButton.setTitle("Start Cooking ->", for: .normal)
         startCookingButton.applyButtonStyle(.primary)
         startCookingButton.translatesAutoresizingMaskIntoConstraints = false
+        startCookingButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         view.addSubview(startCookingButton)
         
         let bottomLabel = UILabel()
@@ -98,5 +99,10 @@ class StartScreenViewController: UIViewController {
             mainLabel.widthAnchor.constraint(equalToConstant: 213),
             mainLabel.heightAnchor.constraint(equalToConstant: 120),
         ])
+    }
+    
+    @objc private func buttonTapped() {
+        let nextVC = SignInViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
