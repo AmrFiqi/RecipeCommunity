@@ -18,6 +18,7 @@ class SignInViewController: UIViewController {
         setupScreen()
         setupTopTextLabel()
         setupEmailTextField()
+        setupPasswordTextField()
     }
     
     private func setupScreen() {
@@ -54,7 +55,7 @@ class SignInViewController: UIViewController {
     private func setupEmailTextField() {
         let emailField = UITextField()
         emailField.applyDefaultStyle()
-        emailField.placeholder = "Email"
+        emailField.placeholder = "Enter Email"
         emailField.textColor = .black
         view.addSubview(emailField)
         
@@ -72,4 +73,24 @@ class SignInViewController: UIViewController {
         ])
     }
     
+    private func setupPasswordTextField() {
+        let passwordField = UITextField()
+        passwordField.applyDefaultStyle()
+        passwordField.placeholder = "Enter Password"
+        passwordField.textColor = .black
+        view.addSubview(passwordField)
+        
+        let passwordLabel = UILabel()
+        passwordLabel.applytextFieldLabelStyle()
+        passwordLabel.text = "Password"
+        view.addSubview(passwordLabel)
+        
+        NSLayoutConstraint.activate([
+            passwordField.topAnchor.constraint(equalTo: view.topAnchor, constant: 363),
+            passwordField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            
+            passwordLabel.bottomAnchor.constraint(equalTo: passwordField.topAnchor, constant: -10),
+            passwordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+        ])
+    }
 }
