@@ -97,7 +97,8 @@ class SignInViewController: UIViewController {
     
     private func setupSignInButton() {
         let signInButton = UIButton()
-        signInButton.setTitle("Sign In    ->", for: .normal)
+        signInButton.setTitle("Sign In  ->", for: .normal)
+        signInButton.titleLabel?.textAlignment = .center
         signInButton.applyButtonStyle(.primary)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(signInButton)
