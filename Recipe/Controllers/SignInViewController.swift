@@ -21,6 +21,7 @@ class SignInViewController: UIViewController {
         setupPasswordTextField()
         setupSignInButton()
         signInOptions()
+        otherSigninButton()
     }
     
     private func setupScreen() {
@@ -153,7 +154,22 @@ class SignInViewController: UIViewController {
     }
     
     private func otherSigninButton() {
-        let facebookButton = UIButton()
+        let facebookButton = UIButton.createSignInButton(image: UIImage(named: "facebook-icon"), backgroundColor: .white)
+        let googleButton = UIButton.createSignInButton(image: UIImage(named: "google-icon"), backgroundColor: .white)
+        view.addSubview(facebookButton)
+        view.addSubview(googleButton)
         
+        NSLayoutConstraint.activate([
+            facebookButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 617),
+            facebookButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
+            facebookButton.widthAnchor.constraint(equalToConstant: 44),
+            facebookButton.heightAnchor.constraint(equalToConstant: 44),
+            
+            googleButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 617),
+            googleButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 131),
+            googleButton.widthAnchor.constraint(equalToConstant: 44),
+            googleButton.heightAnchor.constraint(equalToConstant: 44),
+            
+        ])
     }
 }
