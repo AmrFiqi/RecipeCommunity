@@ -37,6 +37,29 @@ extension UIButton {
         heightConstrants.priority = .defaultHigh
         heightConstrants.isActive = true
     }
+    
+    func createSignInButton(image: UIImage?, backgroundColor: UIColor) -> UIButton {
+            let button = UIButton(type: .custom)
+            button.backgroundColor = backgroundColor
+            button.layer.cornerRadius = 10
+            button.clipsToBounds = true
+            
+            if let image = image {
+                let imageView = UIImageView(image: image)
+                imageView.contentMode = .scaleAspectFit
+                button.addSubview(imageView)
+                
+                imageView.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    imageView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+                    imageView.centerYAnchor.constraint(equalTo: button.centerYAnchor),
+                    imageView.widthAnchor.constraint(equalToConstant: 24),
+                    imageView.heightAnchor.constraint(equalToConstant: 24)
+                ])
+            }
+            
+            return button
+        }
 }
 
 // MARK: - Constants

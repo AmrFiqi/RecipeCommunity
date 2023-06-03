@@ -29,6 +29,16 @@ extension UILabel {
         textColor = .black
         translatesAutoresizingMaskIntoConstraints = false
     }
+    func applyLineLabel() {
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor =  UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.00)
+        font = UIFont.systemFont(ofSize: 11, weight: .light)
+        
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: 50),
+            heightAnchor.constraint(equalToConstant: 1),
+        ])
+    }
 }
 
 private enum LabelColors {
@@ -38,3 +48,4 @@ private enum LabelColors {
 private enum LabelFonts {
     static let defaultTitleFont = UIFont(name: "Poppins-SemiBold", size: 18)
 }
+

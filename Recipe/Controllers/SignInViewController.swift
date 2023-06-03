@@ -20,6 +20,7 @@ class SignInViewController: UIViewController {
         setupEmailTextField()
         setupPasswordTextField()
         setupSignInButton()
+        signInOptions()
     }
     
     private func setupScreen() {
@@ -109,7 +110,7 @@ class SignInViewController: UIViewController {
         forgetLabel.translatesAutoresizingMaskIntoConstraints = false
         forgetLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
         view.addSubview(forgetLabel)
-
+        
         
         NSLayoutConstraint.activate([
             signInButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
@@ -120,6 +121,39 @@ class SignInViewController: UIViewController {
             forgetLabel.bottomAnchor.constraint(equalTo: signInButton.topAnchor, constant: -25),
             forgetLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
         ])
+        
+    }
+    
+    private func signInOptions() {
+        let signInOptions = UILabel()
+        signInOptions.text = "Or Sign in With"
+        signInOptions.textColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.00)
+        signInOptions.font = UIFont.systemFont(ofSize: 11, weight: .light)
+        signInOptions.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(signInOptions)
+        
+        let firstLine = UILabel()
+        firstLine.applyLineLabel()
+        view.addSubview(firstLine)
+        
+        let secondLine = UILabel()
+        secondLine.applyLineLabel()
+        view.addSubview(secondLine)
+        
+        NSLayoutConstraint.activate([
+            signInOptions.topAnchor.constraint(equalTo: view.topAnchor, constant: 580),
+            signInOptions.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 147),
+            
+            firstLine.topAnchor.constraint(equalTo: view.topAnchor, constant: 586),
+            firstLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 90),
+            
+            secondLine.topAnchor.constraint(equalTo: view.topAnchor, constant: 586),
+            secondLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 235),
+        ])
+    }
+    
+    private func otherSigninButton() {
+        let facebookButton = UIButton()
         
     }
 }
