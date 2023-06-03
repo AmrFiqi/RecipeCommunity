@@ -58,7 +58,7 @@ class StartScreenViewController: UIViewController {
     
     private func setupBottomUIComponents() {
         let startCookingButton = UIButton(type: .system)
-        startCookingButton.setTitle("Start Cooking ->", for: .normal)
+        startCookingButton.setTitle("Start Cooking  ->", for: .normal)
         startCookingButton.applyButtonStyle(.primary)
         startCookingButton.translatesAutoresizingMaskIntoConstraints = false
         startCookingButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
