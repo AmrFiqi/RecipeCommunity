@@ -14,7 +14,6 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupScreen()
         setupTopTextLabel()
         setupEmailTextField()
@@ -22,12 +21,10 @@ class SignInViewController: UIViewController {
         setupSignInButton()
         signInOptions()
         otherSigninButton()
+        signupButton()
     }
     
-    private func setupScreen() {
-        view.backgroundColor = .white
-        navigationItem.hidesBackButton = true
-    }
+    
     
     private func setupTopTextLabel() {
         let helloLabel = UILabel()
@@ -171,5 +168,37 @@ class SignInViewController: UIViewController {
             googleButton.heightAnchor.constraint(equalToConstant: 44),
             
         ])
+    }
+    
+    private func signupButton() {
+        let signupLabel = UILabel()
+        signupLabel.text = "Don't have an account? "
+        signupLabel.textColor = .black
+        signupLabel.translatesAutoresizingMaskIntoConstraints = false
+        signupLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        view.addSubview(signupLabel)
+        
+        let signupButton = UIButton()
+        signupButton.setTitle("Sign up", for: .normal)
+        signupButton.setTitleColor( UIColor(red: 1.00, green: 0.61, blue: 0.00, alpha: 1.00), for: .normal)
+        signupButton.translatesAutoresizingMaskIntoConstraints = false
+        signupButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        view.addSubview(signupButton)
+        
+        NSLayoutConstraint.activate([
+            signupLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 710),
+            signupLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
+            
+            signupButton.centerYAnchor.constraint(equalTo: signupLabel.centerYAnchor),
+            signupButton.topAnchor.constraint(equalTo: signupLabel.topAnchor),
+            signupButton.leadingAnchor.constraint(equalTo: signupLabel.trailingAnchor),
+        ])
+        
+        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func signupButtonTapped() {
+        let nextVC = SignupViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
