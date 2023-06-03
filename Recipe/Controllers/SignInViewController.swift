@@ -78,6 +78,7 @@ class SignInViewController: UIViewController {
         passwordField.applyDefaultStyle()
         passwordField.placeholder = "Enter Password"
         passwordField.textColor = .black
+        passwordField.isSecureTextEntry = true
         view.addSubview(passwordField)
         
         let passwordLabel = UILabel()
