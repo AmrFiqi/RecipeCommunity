@@ -28,7 +28,7 @@ extension UIButton {
     func applyButtonStyle(_ style: ButtonStyle) {
         backgroundColor = style.buttonColor
         tintColor = .white
-        
+        titleLabel?.textAlignment = .center
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .callout, compatibleWith: .none)
         layer.cornerRadius = Constants.defaultCornerRadius
         layer.masksToBounds = true
