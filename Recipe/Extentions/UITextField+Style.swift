@@ -11,6 +11,7 @@ import UIKit
 extension UITextField {
     
     func applyDefaultStyle() {
+        self.textColor = .black
         self.frame.size = CGSize(width: 315, height: 55)
         self.layer.cornerRadius = 10
         self.backgroundColor = .white

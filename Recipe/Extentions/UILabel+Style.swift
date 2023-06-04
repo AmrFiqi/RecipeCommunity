@@ -17,6 +17,7 @@ extension UILabel {
 // MARK: - Apply Style
 
 extension UILabel {
+    
     func applyDefaultScreensTitle() {
         textColor = LabelColors.defaultTitleColor
         font = LabelFonts.defaultTitleFont
@@ -24,11 +25,14 @@ extension UILabel {
         numberOfLines = 0
         backgroundColor = .white
     }
-    func applytextFieldLabelStyle() {
+    
+    func applytextFieldLabelStyle(text: String) {
+        self.text = "\(text)'"
         frame = CGRect(x: 0, y: 0, width: 14, height: 14)
         textColor = .black
         translatesAutoresizingMaskIntoConstraints = false
     }
+    
     func applyLineLabel() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor =  UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.00)
@@ -39,6 +43,22 @@ extension UILabel {
             heightAnchor.constraint(equalToConstant: 1),
         ])
     }
+    
+    func applyMainLabel(text: String) {
+        self.text = "\(text)"
+        font = LabelFonts.mainFont
+        frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        translatesAutoresizingMaskIntoConstraints = false
+        textColor = .black
+    }
+    
+    func applySubLabel(text: String) {
+        self.text = "\(text)"
+        font = LabelFonts.subFont
+        frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        textColor = .black
+        translatesAutoresizingMaskIntoConstraints = false
+    }
 }
 
 private enum LabelColors {
@@ -47,5 +67,7 @@ private enum LabelColors {
 
 private enum LabelFonts {
     static let defaultTitleFont = UIFont(name: "Poppins-SemiBold", size: 18)
+    static let subFont = UIFont.systemFont(ofSize: 30, weight: .regular)
+    static let mainFont = UIFont.systemFont(ofSize: 30, weight: .semibold)
 }
 

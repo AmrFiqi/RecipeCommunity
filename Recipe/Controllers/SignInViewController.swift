@@ -28,19 +28,11 @@ class SignInViewController: UIViewController {
     
     private func setupTopTextLabel() {
         let helloLabel = UILabel()
-        helloLabel.text = "Hello,"
-        helloLabel.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
-        helloLabel.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        helloLabel.translatesAutoresizingMaskIntoConstraints = false
-        helloLabel.textColor = .black
+        helloLabel.applyMainLabel(text:"Hello,")
         view.addSubview(helloLabel)
         
         let welcomeLabel = UILabel()
-        welcomeLabel.text = "Welcome Back!"
-        welcomeLabel.font = UIFont.systemFont(ofSize: 30, weight: .regular)
-        welcomeLabel.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        welcomeLabel.textColor = .black
-        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
+        welcomeLabel.applySubLabel(text: "Welcome Back!")
         view.addSubview(welcomeLabel)
         
         NSLayoutConstraint.activate([
@@ -56,12 +48,10 @@ class SignInViewController: UIViewController {
         let emailField = UITextField()
         emailField.applyDefaultStyle()
         emailField.placeholder = "Enter Email"
-        emailField.textColor = .black
         view.addSubview(emailField)
         
         let emailLabel = UILabel()
-        emailLabel.applytextFieldLabelStyle()
-        emailLabel.text = "Email"
+        emailLabel.applytextFieldLabelStyle(text: "Email")
         view.addSubview(emailLabel)
         
         NSLayoutConstraint.activate([
@@ -77,13 +67,11 @@ class SignInViewController: UIViewController {
         let passwordField = UITextField()
         passwordField.applyDefaultStyle()
         passwordField.placeholder = "Enter Password"
-        passwordField.textColor = .black
         passwordField.isSecureTextEntry = true
         view.addSubview(passwordField)
         
         let passwordLabel = UILabel()
-        passwordLabel.applytextFieldLabelStyle()
-        passwordLabel.text = "Enter Password"
+        passwordLabel.applytextFieldLabelStyle(text: "Enter Password")
         view.addSubview(passwordLabel)
         
         NSLayoutConstraint.activate([
