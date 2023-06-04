@@ -11,6 +11,7 @@ class SignupViewController: UIViewController {
     
     // MARK: - Properties
     
+    private let checkboxButton = UIButton(type: .system)
     
     
     // MARK: - Lifecycle
@@ -20,6 +21,7 @@ class SignupViewController: UIViewController {
         setupScreen()
         setupTopLabel()
         setupSignup()
+        acceptTerms()
     }
     
     // MARK: - Setup
@@ -111,5 +113,48 @@ class SignupViewController: UIViewController {
         ])
     }
     
+    private func acceptTerms() {
+        let termsLabel = UILabel()
+        
+        checkboxButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
+        checkboxButton.setImage(UIImage(systemName: "square"), for: .normal)
+        checkboxButton.setTitleColor(UIColor(red: 1.00, green: 0.61, blue: 0.00, alpha: 1.00), for: .normal)
+        checkboxButton.translatesAutoresizingMaskIntoConstraints = false
+        checkboxButton.layer.cornerRadius = 5
+        view.addSubview(checkboxButton)
+        
+        termsLabel.text = "Accept Terms & Conditions"
+        termsLabel.textColor = UIColor(red: 1.00, green: 0.61, blue: 0.00, alpha: 1.00)
+        termsLabel.font = UIFont.systemFont(ofSize: 11)
+        termsLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(termsLabel)
+        
+        NSLayoutConstraint.activate([
+            checkboxButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 547),
+            checkboxButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            checkboxButton.widthAnchor.constraint(equalToConstant: 17),
+            checkboxButton.heightAnchor.constraint(equalToConstant: 17),
+            
+            termsLabel.centerYAnchor.constraint(equalTo: checkboxButton.centerYAnchor),
+            termsLabel.topAnchor.constraint(equalTo: checkboxButton.topAnchor),
+            termsLabel.leadingAnchor.constraint(equalTo: checkboxButton.trailingAnchor),
+            
+        ])
+        
+        checkboxButton.addTarget(self, action: #selector(checkboxTapped), for: .touchUpInside)
+    }
     
+    // MARK: - Actions
+
+    @objc private func checkboxTapped() {
+        checkboxButton.isSelected.toggle()
+        
+        if checkboxButton.isSelected {
+            if let url = URL(string: "https://www.websitepolicies.com/blog/sample-terms-conditions-template") {
+                UIApplication.shared.open(url)
+            }
+        }
+    }
 }
+
+

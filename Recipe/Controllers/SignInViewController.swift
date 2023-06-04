@@ -187,6 +187,8 @@ class SignInViewController: UIViewController {
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
     
+    // MARK: - Actions
+    
     @objc private func signupButtonTapped() {
         let nextVC = SignupViewController()
         navigationController?.pushViewController(nextVC, animated: true)
