@@ -22,6 +22,10 @@ class SignupViewController: UIViewController {
         setupTopLabel()
         setupSignup()
         acceptTerms()
+        setupSignupButton()
+        signinOptions()
+        otherSigninButton()
+        signinButton()
     }
     
     // MARK: - Setup
@@ -118,9 +122,10 @@ class SignupViewController: UIViewController {
         
         checkboxButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
         checkboxButton.setImage(UIImage(systemName: "square"), for: .normal)
-        checkboxButton.setTitleColor(UIColor(red: 1.00, green: 0.61, blue: 0.00, alpha: 1.00), for: .normal)
+        checkboxButton.tintColor = UIColor(red: 1.00, green: 0.61, blue: 0.00, alpha: 1.00)
         checkboxButton.translatesAutoresizingMaskIntoConstraints = false
         checkboxButton.layer.cornerRadius = 5
+        checkboxButton.layer.masksToBounds = true
         view.addSubview(checkboxButton)
         
         termsLabel.text = "Accept Terms & Conditions"
@@ -131,19 +136,113 @@ class SignupViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             checkboxButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 547),
-            checkboxButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            checkboxButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             checkboxButton.widthAnchor.constraint(equalToConstant: 17),
             checkboxButton.heightAnchor.constraint(equalToConstant: 17),
             
+            
             termsLabel.centerYAnchor.constraint(equalTo: checkboxButton.centerYAnchor),
             termsLabel.topAnchor.constraint(equalTo: checkboxButton.topAnchor),
-            termsLabel.leadingAnchor.constraint(equalTo: checkboxButton.trailingAnchor),
+            termsLabel.leadingAnchor.constraint(equalTo: checkboxButton.trailingAnchor, constant: 5),
             
         ])
         
         checkboxButton.addTarget(self, action: #selector(checkboxTapped), for: .touchUpInside)
     }
     
+    private func setupSignupButton() {
+        let signupButton = UIButton()
+        signupButton.setTitle("Sign Up  ->", for: .normal)
+        signupButton.applyButtonStyle(.primary)
+        signupButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(signupButton)
+        
+        
+        NSLayoutConstraint.activate([
+            signupButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 590),
+            signupButton.widthAnchor.constraint(equalToConstant: 315),
+            signupButton.heightAnchor.constraint(equalToConstant: 60),
+            signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+
+        ])
+        
+    }
+    
+    private func signinOptions() {
+        let signInOptions = UILabel()
+        signInOptions.text = "Or Sign in With"
+        signInOptions.textColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.00)
+        signInOptions.font = UIFont.systemFont(ofSize: 11, weight: .light)
+        signInOptions.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(signInOptions)
+        
+        let firstLine = UILabel()
+        firstLine.applyLineLabel()
+        view.addSubview(firstLine)
+        
+        let secondLine = UILabel()
+        secondLine.applyLineLabel()
+        view.addSubview(secondLine)
+        
+        NSLayoutConstraint.activate([
+            signInOptions.topAnchor.constraint(equalTo: view.topAnchor, constant: 664),
+            signInOptions.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 147),
+
+            firstLine.topAnchor.constraint(equalTo: view.topAnchor, constant: 670),
+            firstLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 90),
+
+            secondLine.topAnchor.constraint(equalTo: view.topAnchor, constant: 670),
+            secondLine.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 235),
+
+        ])
+    }
+    
+    private func otherSigninButton() {
+        let facebookButton = UIButton.createSignInButton(image: UIImage(named: "facebook-icon"), backgroundColor: .white)
+        let googleButton = UIButton.createSignInButton(image: UIImage(named: "google-icon"), backgroundColor: .white)
+        view.addSubview(facebookButton)
+        view.addSubview(googleButton)
+        
+        NSLayoutConstraint.activate([
+            facebookButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 701),
+            facebookButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 200),
+            facebookButton.widthAnchor.constraint(equalToConstant: 44),
+            facebookButton.heightAnchor.constraint(equalToConstant: 44),
+            
+            googleButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 701),
+            googleButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 131),
+            googleButton.widthAnchor.constraint(equalToConstant: 44),
+            googleButton.heightAnchor.constraint(equalToConstant: 44),
+            
+        ])
+    }
+    
+    private func signinButton() {
+        let signinLabel = UILabel()
+        signinLabel.text = "Already a memeber? "
+        signinLabel.textColor = .black
+        signinLabel.translatesAutoresizingMaskIntoConstraints = false
+        signinLabel.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        view.addSubview(signinLabel)
+        
+        let signinButton = UIButton()
+        signinButton.setTitle("Sign In", for: .normal)
+        signinButton.setTitleColor( UIColor(red: 1.00, green: 0.61, blue: 0.00, alpha: 1.00), for: .normal)
+        signinButton.translatesAutoresizingMaskIntoConstraints = false
+        signinButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        view.addSubview(signinButton)
+        
+        NSLayoutConstraint.activate([
+            signinLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 765),
+            signinLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
+            
+            signinButton.centerYAnchor.constraint(equalTo: signinLabel.centerYAnchor),
+            signinButton.topAnchor.constraint(equalTo: signinLabel.topAnchor),
+            signinButton.leadingAnchor.constraint(equalTo: signinLabel.trailingAnchor),
+        ])
+        
+        signinButton.addTarget(self, action: #selector(signinButtonTapped), for: .touchUpInside)
+    }
     // MARK: - Actions
 
     @objc private func checkboxTapped() {
@@ -154,6 +253,14 @@ class SignupViewController: UIViewController {
                 UIApplication.shared.open(url)
             }
         }
+    }
+    
+    @objc private func signinButtonTapped() {
+        let signInVC = SignInViewController()
+        UIView.transition(with: view, duration: 2, options: .transitionCurlUp, animations: {
+            self.navigationController?.pushViewController(signInVC, animated: false)
+        }, completion: nil)
+
     }
 }
 
