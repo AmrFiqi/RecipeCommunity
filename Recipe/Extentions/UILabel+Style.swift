@@ -27,8 +27,9 @@ extension UILabel {
     }
     
     func applytextFieldLabelStyle(text: String) {
-        self.text = "\(text)'"
+        self.text = "\(text)"
         frame = CGRect(x: 0, y: 0, width: 14, height: 14)
+        font = UIFont(name: "Poppins-Regular", size: 14)
         textColor = .black
         translatesAutoresizingMaskIntoConstraints = false
     }

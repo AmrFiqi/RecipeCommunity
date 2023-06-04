@@ -9,8 +9,11 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
+    // MARK: - Properties
     
-    // MARK: - Class Methods
+    
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,7 @@ class SignInViewController: UIViewController {
     }
     
     
+    // MARK: - Setup
     
     private func setupTopTextLabel() {
         let helloLabel = UILabel()
@@ -46,8 +50,7 @@ class SignInViewController: UIViewController {
     
     private func setupEmailTextField() {
         let emailField = UITextField()
-        emailField.applyDefaultStyle()
-        emailField.placeholder = "Enter Email"
+        emailField.applyDefaultStyle(hint: "Enter Email")
         view.addSubview(emailField)
         
         let emailLabel = UILabel()
@@ -65,8 +68,7 @@ class SignInViewController: UIViewController {
     
     private func setupPasswordTextField() {
         let passwordField = UITextField()
-        passwordField.applyDefaultStyle()
-        passwordField.placeholder = "Enter Password"
+        passwordField.applyDefaultStyle(hint: "Enter Password")
         passwordField.isSecureTextEntry = true
         view.addSubview(passwordField)
         
@@ -86,7 +88,6 @@ class SignInViewController: UIViewController {
     private func setupSignInButton() {
         let signInButton = UIButton()
         signInButton.setTitle("Sign In  ->", for: .normal)
-        signInButton.titleLabel?.textAlignment = .center
         signInButton.applyButtonStyle(.primary)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(signInButton)
