@@ -165,7 +165,7 @@ class SignupViewController: UIViewController {
             signupButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
 
         ])
-        
+        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
     
     private func signinOptions() {
@@ -261,6 +261,11 @@ class SignupViewController: UIViewController {
             self.navigationController?.pushViewController(signInVC, animated: false)
         }, completion: nil)
 
+    }
+    
+    @objc private func signupButtonTapped() {
+        let mainVC = MainTabBarViewController()
+        navigationController?.pushViewController(mainVC, animated: true)
     }
 }
 
