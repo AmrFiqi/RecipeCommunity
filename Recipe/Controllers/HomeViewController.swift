@@ -11,11 +11,12 @@ class HomeViewController: UIViewController {
     
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupTitle()
+        setupSearchField()
     }
     
     // MARK: - Setup
@@ -57,6 +58,40 @@ class HomeViewController: UIViewController {
         ])
         
         profileButton.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
+    }
+    
+    private func setupSearchField() {
+        let searchBar = UITextField()
+        searchBar.applySearchBarStyle(hint: "Search recipe")
+        
+        
+        // Create a UIImageView with the magnifying glass icon
+        let magnifyingGlassImage = UIImage(systemName: "magnifyingglass")
+        let magnifyingGlassImageView = UIImageView(image: magnifyingGlassImage)
+        magnifyingGlassImageView.tintColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.00)
+        
+        // Set its size.
+        magnifyingGlassImageView.contentMode = .scaleAspectFit
+        magnifyingGlassImageView.frame.size = CGSize(width: 16, height: 16)
+        
+        // Add the magnifying glass image view as a subview of the text field
+        searchBar.addSubview(magnifyingGlassImageView)
+        
+        // Set constraints for the magnifying glass image view
+        
+        magnifyingGlassImageView.translatesAutoresizingMaskIntoConstraints = false
+        magnifyingGlassImageView.centerYAnchor.constraint(equalTo: searchBar.centerYAnchor).isActive = true
+        magnifyingGlassImageView.leadingAnchor.constraint(equalTo: searchBar.leadingAnchor, constant: 8).isActive = true
+        
+        view.addSubview(searchBar)
+        
+        
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 146),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            searchBar.widthAnchor.constraint(equalToConstant: 255),
+            searchBar.heightAnchor.constraint(equalToConstant: 40)
+        ])
     }
     
     
