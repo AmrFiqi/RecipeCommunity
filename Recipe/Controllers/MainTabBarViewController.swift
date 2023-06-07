@@ -34,9 +34,9 @@ class MainTabBarViewController: UITabBarController {
         vc4.tabBarItem.image = UIImage(systemName: "person")
 
         vc1.title = "Home"
-        vc2.title = "Coming Soon"
+        vc2.title = "Saved Recipe"
         vc3.title = "Top Search"
-        vc4.title = "Downloads"
+        vc4.title = "Profile"
 
         tabBar.tintColor = .label
         setViewControllers([vc1, vc2, vc3, vc4], animated: true)

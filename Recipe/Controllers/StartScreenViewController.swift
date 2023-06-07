@@ -11,7 +11,7 @@ class StartScreenViewController: UIViewController {
     
     
     
-    // MARK: - Class Methods
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,9 @@ class StartScreenViewController: UIViewController {
         setupBottomUIComponents()
     }
  
+    
+    // MARK: - Setup
+    
     private func setupBackground() {
         let backgroundImage = UIImage(named: "startingScreen")
         let backgroundImageView = UIImageView(image: backgroundImage)
@@ -101,6 +104,7 @@ class StartScreenViewController: UIViewController {
         ])
     }
     
+    // MARK: - Actions
     @objc private func buttonTapped() {
         let nextVC = SignInViewController()
         navigationController?.pushViewController(nextVC, animated: true)
