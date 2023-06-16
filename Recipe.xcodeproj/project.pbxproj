@@ -25,6 +25,10 @@
 		E59ED62A2A1E022100DFAF91 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ED6292A1E022100DFAF91 /* StartScreenViewController.swift */; };
 		E59ED62F2A1E0AE400DFAF91 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ED62E2A1E0AE400DFAF91 /* UIButton+Style.swift */; };
 		E59ED6312A1E0AFD00DFAF91 /* UILabel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ED6302A1E0AFD00DFAF91 /* UILabel+Style.swift */; };
+		E5E6E3972A2E102000C61C0C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6E3962A2E102000C61C0C /* HomeViewController.swift */; };
+		E5E6E3992A2E102E00C61C0C /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6E3982A2E102E00C61C0C /* NotificationsViewController.swift */; };
+		E5E6E39B2A2E103800C61C0C /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6E39A2A2E103800C61C0C /* SavedViewController.swift */; };
+		E5E6E39D2A2E104000C61C0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6E39C2A2E104000C61C0C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		E59ED6292A1E022100DFAF91 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		E59ED62E2A1E0AE400DFAF91 /* UIButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
 		E59ED6302A1E0AFD00DFAF91 /* UILabel+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Style.swift"; sourceTree = "<group>"; };
+		E5E6E3962A2E102000C61C0C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E5E6E3982A2E102E00C61C0C /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		E5E6E39A2A2E103800C61C0C /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		E5E6E39C2A2E104000C61C0C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,14 @@
 		E59ED6222A1DFEDA00DFAF91 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E59ED6292A1E022100DFAF91 /* StartScreenViewController.swift */,
+				E5E6E3962A2E102000C61C0C /* HomeViewController.swift */,
+				E5E6E39A2A2E103800C61C0C /* SavedViewController.swift */,
+				E59ED6272A1E000F00DFAF91 /* MainTabBarViewController.swift */,
+				E50856552A23851800334847 /* SignInViewController.swift */,
+				E508565B2A2BD32A00334847 /* SignupViewController.swift */,
+				E5E6E3982A2E102E00C61C0C /* NotificationsViewController.swift */,
+				E5E6E39C2A2E104000C61C0C /* ProfileViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,10 +189,6 @@
 		E59ED6242A1DFEEC00DFAF91 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E59ED6272A1E000F00DFAF91 /* MainTabBarViewController.swift */,
-				E59ED6292A1E022100DFAF91 /* StartScreenViewController.swift */,
-				E50856552A23851800334847 /* SignInViewController.swift */,
-				E508565B2A2BD32A00334847 /* SignupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,11 +352,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E6E3992A2E102E00C61C0C /* NotificationsViewController.swift in Sources */,
 				E59ED6312A1E0AFD00DFAF91 /* UILabel+Style.swift in Sources */,
 				E59ED5F62A1DF7C200DFAF91 /* ViewController.swift in Sources */,
 				E59ED62F2A1E0AE400DFAF91 /* UIButton+Style.swift in Sources */,
 				E59ED6282A1E000F00DFAF91 /* MainTabBarViewController.swift in Sources */,
 				E59ED5F22A1DF7C200DFAF91 /* AppDelegate.swift in Sources */,
+				E5E6E39B2A2E103800C61C0C /* SavedViewController.swift in Sources */,
+				E5E6E39D2A2E104000C61C0C /* ProfileViewController.swift in Sources */,
+				E5E6E3972A2E102000C61C0C /* HomeViewController.swift in Sources */,
 				E50856562A23851800334847 /* SignInViewController.swift in Sources */,
 				E508565C2A2BD32A00334847 /* SignupViewController.swift in Sources */,
 				E50856602A2BD4D600334847 /* UIViewController.swift in Sources */,
